@@ -1,13 +1,13 @@
-package org.atf.marvel_heroes
+package org.ser.marvel
 
 import android.animation.ArgbEvaluator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import org.atf.marvel_heroes.R
-import org.atf.marvel_heroes.heroes.adapter.HeroAdapter
-import org.atf.marvel_heroes.heroes.HeroesDataset
-import org.atf.marvel_heroes.heroes.model.Hero
-import org.atf.marvel_heroes.custromViewes.TriangleView
+import org.ser.marvel.R
+import org.ser.marvel.heroes.adapter.HeroAdapter
+import org.ser.marvel.heroes.HeroesDataset
+import org.ser.marvel.heroes.model.Hero
+import org.ser.marvel.custromViewes.TriangleView
 import com.yarolegovich.discretescrollview.DiscreteScrollView
 import com.yarolegovich.discretescrollview.transform.Pivot
 import com.yarolegovich.discretescrollview.transform.ScaleTransformer
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity(),
         triangle?.invalidate()
     }
 
-    private fun interpolate(fraction: Float, c1: Int, c2: Int): Int {
-        return evaluator?.evaluate(fraction, c1, c2) as Int
+    private fun interpolate(fraction: Float, point1: Int, point2: Int): Int {
+        return evaluator?.evaluate(fraction, point1, point2) as Int
     }
 }

@@ -6,8 +6,8 @@
     android:layout_marginHorizontal="24sp"
     app:cardCornerRadius="20dp"
     app:cardUseCompatPadding="true"
-    app:cardElevation="5dp"
-    app:cardMaxElevation="5dp">
+    app:cardElevation="4dp"
+    app:cardMaxElevation="4dp">
 
     <ImageView
         android:id="@+id/hero_avatar"
