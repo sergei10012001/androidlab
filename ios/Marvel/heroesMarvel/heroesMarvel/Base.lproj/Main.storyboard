@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gYo-32-QYe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gYo-32-QYe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -17,8 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cFZ-wY-ZTm">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cFZ-wY-ZTm">
                                 <rect key="frame" x="0.0" y="364" width="414" height="498"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="XxX-au-dqa" customClass="PagingCollectionViewLayout" customModule="heroesMarvel" customModuleProvider="target"/>
                                 <cells>
@@ -67,34 +68,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uL-DG-Weh">
-                                <rect key="frame" x="34" y="208" width="346" height="36"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Choose your hero">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99485382852127446" green="1" blue="0.94600566622002369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="36" name="Courier-Bold"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cFZ-wY-ZTm" secondAttribute="bottom" id="4FV-OJ-00H"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cFZ-wY-ZTm" secondAttribute="bottom" id="Aqa-la-0Wr"/>
-                            <constraint firstItem="cFZ-wY-ZTm" firstAttribute="top" secondItem="9uL-DG-Weh" secondAttribute="bottom" constant="120" id="Ir7-n2-a7b"/>
-                            <constraint firstItem="cFZ-wY-ZTm" firstAttribute="top" secondItem="9uL-DG-Weh" secondAttribute="bottom" constant="20" id="KsG-Pf-WYS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cFZ-wY-ZTm" secondAttribute="trailing" id="P6L-CZ-r3o"/>
-                            <constraint firstItem="cFZ-wY-ZTm" firstAttribute="top" secondItem="9uL-DG-Weh" secondAttribute="bottom" constant="120" id="RID-zA-yXo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cFZ-wY-ZTm" secondAttribute="trailing" id="VuK-U9-wzD"/>
-                            <constraint firstItem="9uL-DG-Weh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xfg-yD-zni"/>
-                            <constraint firstItem="9uL-DG-Weh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="feX-RW-vav"/>
-                            <constraint firstItem="cFZ-wY-ZTm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uLu-WQ-3hI"/>
-                            <constraint firstItem="cFZ-wY-ZTm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y4m-1S-jW8"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fyB-Vr-CNB"/>
                     <connections>

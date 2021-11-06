@@ -25,6 +25,15 @@ class ViewController: UIViewController {
             imageView.image = image
             navigationItem.titleView = imageView
         
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 30))
+            label.center = CGPoint(x: 190, y: 185)
+            label.textAlignment = .center
+            label.text = "Choose your hero".localized()
+            label.textColor = .white
+            label.font = label.font.withSize(30)
+
+            self.view.addSubview(label)
+        
         if let layout = collectionView.collectionViewLayout as? PagingCollectionViewLayout {
             layout.itemSize = .init(width: view.frame.width - 40, height: 500)
             layout.minimumLineSpacing = 20
@@ -36,6 +45,16 @@ class ViewController: UIViewController {
     }
 }
 
+extension String {
+    func localized() -> String {
+        return NSLocalizedString(self,
+                                 tableName: "Localizable",
+                                 bundle: .main,
+                                 value: self,
+                                 comment: self
+        )
+    }
+}
 
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
