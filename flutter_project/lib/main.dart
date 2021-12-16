@@ -35,20 +35,21 @@ class MyStatelessWidget extends StatelessWidget {
 
           children:<Widget>[
             Padding(
-                padding: const EdgeInsets.fromLTRB(20,0,20,0),
-                child: Image.asset('images/marvel.png')),
+                padding: const EdgeInsets.fromLTRB(20,50,20,0),
+                child:  Image.asset('images/marvel.png')),
             const SizedBox(
               width: 800,
               height: 300,
 
               child: Padding(
-                padding: EdgeInsets.fromLTRB(95,110,0,0),
+                padding: EdgeInsets.fromLTRB(95,150,0,0),
                 child: Text("Choose your hero",style: TextStyle(color: Colors.red, fontSize: 30),),),
             ),
 
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
-
+              padding: const EdgeInsets.fromLTRB(10, 200, 10, 10),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
               child: PageView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
@@ -58,10 +59,14 @@ class MyStatelessWidget extends StatelessWidget {
                       Image.asset(
                         'images/Black cat.jpg',
 
-                        fit: BoxFit.fill,
+                        fit: BoxFit.cover,
+                          height: double.infinity,
+                          width: double.infinity,
+                          alignment: Alignment.center,
                       ),
+
                       const Padding(
-                        padding: EdgeInsets.fromLTRB(185, 420, 20, 0),
+                        padding: EdgeInsets.fromLTRB(165, 420, 20, 0),
                         child: Text(
                           "Black cat",
                           style: TextStyle(color: Colors.white, fontSize: 50),
@@ -75,7 +80,10 @@ class MyStatelessWidget extends StatelessWidget {
                     children: <Widget>[
                       Image.asset(
                         'images/spiderman.jpg',
-                        fit: BoxFit.fill,
+                        fit: BoxFit.cover,
+                        height: double.infinity,
+                        width: double.infinity,
+                        alignment: Alignment.center,
                       ),
                       const Padding(
                         padding: EdgeInsets.fromLTRB(15, 420, 20, 0),
@@ -91,7 +99,10 @@ class MyStatelessWidget extends StatelessWidget {
                     children: <Widget>[
                       Image.asset(
                         'images/Psylocke.jpg',
-                        fit: BoxFit.fill,
+                        fit: BoxFit.cover,
+                        height: double.infinity,
+                        width: double.infinity,
+                        alignment: Alignment.center,
                       ),
                       const Padding(
                         padding: EdgeInsets.fromLTRB(2, 10, 20, 0),
@@ -107,7 +118,10 @@ class MyStatelessWidget extends StatelessWidget {
                     children: <Widget>[
                       Image.asset(
                         'images/X23.jpeg',
-                        fit: BoxFit.fill,
+                        fit: BoxFit.cover,
+                        height: double.infinity,
+                        width: double.infinity,
+                        alignment: Alignment.center,
                       ),
                       const Padding(
                         padding: EdgeInsets.fromLTRB(10, 415, 20, 0),
@@ -123,8 +137,8 @@ class MyStatelessWidget extends StatelessWidget {
 
 
             ),
+            ),
           ],
-
         ),
       ),
     );
