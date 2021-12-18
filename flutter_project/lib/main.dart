@@ -5,21 +5,39 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: MyStatelessWidget(),
+        body: MarvelPageView(),
       ),
     );
   }
 }
 
+class Marvel {
+  final String name;
+  final String image;
 
+  Marvel({ required this.name, required this.image});
+}
 
-class MyStatelessWidget extends StatelessWidget {
-  const MyStatelessWidget({Key? key}) : super(key: key);
+class MarvelPageView extends StatefulWidget {
+  const MarvelPageView({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _MyStatelessWidget();
+}
+
+class _MyStatelessWidget extends State<MarvelPageView> {
+  final controller = PageController(viewportFraction: 0.85);
+
+  final List<Marvel> heroes = [
+    Marvel(name: "Black cat", image: 'images/Black cat.jpg'),
+    Marvel(name: "Spider", image: 'images/spiderman.jpg'),
+    Marvel(name: "Psylocke", image: 'images/Psylocke.jpg'),
+    Marvel(name: "       X-23", image: 'images/X23.jpeg'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,98 +65,42 @@ class MyStatelessWidget extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.fromLTRB(10, 200, 10, 10),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-              child: PageView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Stack(
-                    fit: StackFit.expand,
-                    children: <Widget>[
-                      Image.asset(
-                        'images/Black cat.jpg',
-
-                        fit: BoxFit.cover,
-                          height: double.infinity,
-                          width: double.infinity,
-                          alignment: Alignment.center,
+              padding: const EdgeInsets.fromLTRB(0, 200, 10, 10),
+              child: PageView.builder(
+                  controller: controller,
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  pageSnapping: true,
+                  padEnds: true,
+                  itemCount: heroes.length,
+                  itemBuilder: (context, index)=> Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      elevation: 15,
+                      clipBehavior: Clip.antiAlias,
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: <Widget>[
+                          Image.asset(
+                            heroes[index].image,
+                            fit: BoxFit.cover,
+                            height: double.infinity,
+                            width: double.infinity,
+                            alignment: Alignment.center,
+                          ),
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(40, 380, 20, 0),
+                            child: Text(
+                              heroes[index].name,
+                              style: const TextStyle(color: Colors.white, fontSize: 50),
+                            ),
+                          ),
+                        ],
                       ),
-
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(165, 420, 20, 0),
-                        child: Text(
-                          "Black cat",
-                          style: TextStyle(color: Colors.white, fontSize: 50),
-                        ),
-                      ),
-                    ],
-                  ), //Black cat
-
-                  Stack(
-                    fit: StackFit.expand,
-                    children: <Widget>[
-                      Image.asset(
-                        'images/spiderman.jpg',
-                        fit: BoxFit.cover,
-                        height: double.infinity,
-                        width: double.infinity,
-                        alignment: Alignment.center,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(15, 420, 20, 0),
-                        child: Text(
-                          "Spider Man",
-                          style: TextStyle(color: Colors.white, fontSize: 50),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    fit: StackFit.expand,
-                    children: <Widget>[
-                      Image.asset(
-                        'images/Psylocke.jpg',
-                        fit: BoxFit.cover,
-                        height: double.infinity,
-                        width: double.infinity,
-                        alignment: Alignment.center,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(2, 10, 20, 0),
-                        child: Text(
-                          "Psylocke",
-                          style: TextStyle(color: Colors.white, fontSize: 50),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    fit: StackFit.expand,
-                    children: <Widget>[
-                      Image.asset(
-                        'images/X23.jpeg',
-                        fit: BoxFit.cover,
-                        height: double.infinity,
-                        width: double.infinity,
-                        alignment: Alignment.center,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(10, 415, 20, 0),
-                        child: Text(
-                          "X-23",
-                          style: TextStyle(color: Colors.black, fontSize: 50),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-
-
-            ),
-            ),
-          ],
+                    ),
+                  )),
+            ),   ],
         ),
       ),
     );
