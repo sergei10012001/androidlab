@@ -36,7 +36,7 @@ class _MyStatelessWidget extends State<MarvelPageView> {
     Marvel(name: "Black cat", image: 'images/Black cat.jpg'),
     Marvel(name: "Spider", image: 'images/spiderman.jpg'),
     Marvel(name: "Psylocke", image: 'images/Psylocke.jpg'),
-    Marvel(name: "       X-23", image: 'images/X23.jpeg'),
+    Marvel(name: "X-23", image: 'images/X23.jpeg'),
   ];
 
   @override
@@ -93,7 +93,13 @@ class _MyStatelessWidget extends State<MarvelPageView> {
                             margin: const EdgeInsets.fromLTRB(40, 380, 20, 0),
                             child: Text(
                               heroes[index].name,
-                              style: const TextStyle(color: Colors.white, fontSize: 50),
+                              style: const TextStyle(color: Colors.white, fontSize: 50,
+                                shadows: [
+                                Shadow(
+                                    offset: Offset(2, 3),
+                                    blurRadius: 5.0,
+                                    color: Color.fromARGB(255, 255, 0, 255))
+                              ],),
                             ),
                           ),
                         ],
